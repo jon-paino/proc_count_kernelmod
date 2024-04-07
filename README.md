@@ -1,6 +1,6 @@
 # A Kernel Seedling
 
-This kernel module is intended to output the number of currently running processes on your system.
+This kernel module counts the number of currently running processes in the system and exposes this count via a virtual file named "count" in the /proc directory. When the /proc/count file is read, it outputs the total process count as a string. Upon loading (insmod), it logs an initialization message, and upon removal (rmmod), it logs an exit message and removes the /proc/count entry.
 
 ## Building
 ```shell
